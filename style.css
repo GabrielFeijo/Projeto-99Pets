@@ -206,7 +206,7 @@
 .dog-photo{
     width: 164px;
     height: 200px;
-    background-image: url('images/small-dog.svg');
+    /* background-image: url('images/small-dog.svg'); */
 }
 
 
