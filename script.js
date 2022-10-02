@@ -55,7 +55,7 @@ document.querySelector('.take-photo').addEventListener('click', () => {
       theImageCapturer.takePhoto()
         .then(blob => {
             document.querySelector('.show-video').classList.add('d-none')
-            document.getElementById("imageTag").classList.remove('d-none')
+            document.querySelector(".photo").classList.remove('d-none')
           var theImageTag = document.getElementById("imageTag");
           theImageTag.src = URL.createObjectURL(blob);
         })
