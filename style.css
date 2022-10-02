@@ -390,7 +390,7 @@
     height: 35px;
     position: relative;
 }
-input[type=file] {
+#img-input {
     position: absolute;
     top: 0;
     right: 0;
