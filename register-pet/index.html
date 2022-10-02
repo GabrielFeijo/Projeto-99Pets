@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>99 Pets</title>
+</head>
+<body>
+    <main class="wrap">
+        <section class="back d-none">
+            <i class="bi bi-arrow-left"></i>
+        </section>
+        <h2 class="title font2">Cadastrar Pet</h2>
+        <section class="add-photo">
+            <div class="center">
+                <i class="bi bi-plus-circle icon"></i>
+                <p class="desc-pet">Foto do pet</p>
+            </div>
+            
+        </section>
+     
+        <section class="form">
+            <form action="">
+                <input type="text" name="name" placeholder="Nome do pet" class="input">
+                <input type="number" name="age" placeholder="Idade do pet" class="input">
+                <input type="text" name="dogbreed" placeholder="Raça do pet" class="input">
+        
+                <input type="submit" value="Próximo" class="btn-main bottom">
+
+            </form>
+        </section>
+     
+
+        <div class="show-video d-none">
+            <!-- <div class="photo"></div> -->
+            <p><video autoplay style="height: 380px; width: 298px;"></video></p>
+            <section class="info-photo">
+                <i class="bi bi-images photo-gallery" ></i>
+                <img src="icons/camera.svg" alt="" class="take-photo">
+                <img src="icons/switch-camera.svg" alt="">
+            </section>
+        </div>
+      
+    </main>
+  
+    <script src="../script.js"></script>
+</body>
+</html>
