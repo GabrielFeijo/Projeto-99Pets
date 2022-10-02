@@ -1,4 +1,4 @@
-
+var theStream;
 
 document.querySelector('.add-photo').addEventListener('click', () => {
     if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
@@ -31,7 +31,13 @@ document.querySelector('.add-photo').addEventListener('click', () => {
       });
 });
   
-var theStream;
+function getUserMedia(options, successCallback, failureCallback) {
+    var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    if (api) {
+      return api.bind(navigator)(options, successCallback, failureCallback);
+    }
+  }
 
 document.querySelector('.take-photo').addEventListener('click', () => {
     if (!('ImageCapture' in window)) {
@@ -54,13 +60,7 @@ document.querySelector('.take-photo').addEventListener('click', () => {
         .catch(err => alert('Error: ' + err));
 });
 
-function getUserMedia(options, successCallback, failureCallback) {
-    var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia || navigator.msGetUserMedia;
-    if (api) {
-      return api.bind(navigator)(options, successCallback, failureCallback);
-    }
-  }
+
 
   
  
