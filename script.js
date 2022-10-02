@@ -72,7 +72,7 @@ document.querySelector('.take-photo').addEventListener('click', () => {
   theImageCapturer.takePhoto()
     .then(blob => {
       document.querySelector('.show-video').classList.add('d-none')
-      document.querySelector(".dog-photo").classList.remove('d-none')
+      document.querySelector(".confirm-photo").classList.remove('d-none')
       document.querySelector('.form').classList.remove('d-none')
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
@@ -88,7 +88,7 @@ function readImage() {
         var file = new FileReader();
         file.onload = function(e) {
           document.querySelector('.show-video').classList.add('d-none')
-          document.querySelector(".dog-photo").classList.remove('d-none')
+          document.querySelector(".confirm-photo").classList.remove('d-none')
           document.querySelector('.form').classList.remove('d-none')
             document.getElementById("imageTag").src = e.target.result;
         };       
