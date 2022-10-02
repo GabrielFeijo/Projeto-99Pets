@@ -175,7 +175,7 @@
     width: 298px;
     height: 380px;
     border-radius: 16px;
-    background-image: url('images/dog.svg');
+    /* background-image: url('images/dog.svg'); */
     box-shadow: 2px 2px rgba(0, 0, 0, 0.06);
 }
 .info-photo{
