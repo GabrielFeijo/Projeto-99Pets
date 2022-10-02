@@ -385,3 +385,20 @@
 .map{
     border-radius: 16px;
 }
+.gallery{
+    width: 35px;
+    height: 35px;
+    position: relative;
+}
+input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    outline: none;
+    background: #fff;
+    cursor: inherit;
+    display: block;
+}

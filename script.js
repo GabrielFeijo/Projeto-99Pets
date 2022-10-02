@@ -80,6 +80,22 @@ document.querySelector('.take-photo').addEventListener('click', () => {
 });
 
 
+document.getElementById("img-input").addEventListener("change", readImage, false);
+
+function readImage() {
+    if (this.files && this.files[0]) {
+        var file = new FileReader();
+        file.onload = function(e) {
+          document.querySelector('.show-video').classList.add('d-none')
+          document.querySelector(".photo").classList.remove('d-none')
+            document.getElementById("imageTag").src = e.target.result;
+        };       
+        file.readAsDataURL(this.files[0]);
+    }
+}
+  
+
+
 
 
 
