@@ -1,6 +1,6 @@
 
 
-
+fetchQuestionsJSON()
 
 async function fetchQuestionsJSON() {
     const response = await fetch('https://api-mobile-pets.herokuapp.com/pets');
@@ -55,7 +55,7 @@ async function fetchQuestionsJSON() {
 
 });
   
-fetchQuestionsJSON()
+
 
   
   

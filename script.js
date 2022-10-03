@@ -101,6 +101,8 @@ document.getElementById("img-input").addEventListener("change", readImage, false
 function readImage() {
     if (this.files && this.files[0]) {
         var file = new FileReader();
+
+        
         file.onload = function(e) {
                 
           theStream.getTracks().forEach((track) => {
