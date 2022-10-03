@@ -1,6 +1,7 @@
 var theStream;
 let facingMode = "environment"
 let source = ""
+let url = ""
 const loc = document.location;
 
  
@@ -77,17 +78,22 @@ document.querySelector('.take-photo').addEventListener('click', () => {
     alert('Grab the video stream first!');
     return;
   }
+ const track = theStream.getVideoTracks()[0];
+ let theImageCapturer = new ImageCapture(track);
+//  var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
 
-  var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
-
-  theImageCapturer.takePhoto()
-    .then(blob => {
+  theImageCapturer.takePhoto(
+     {imageHeight:200,imageWidth:164}).then(blob => {
       document.querySelector('.show-video').classList.add('d-none')
       document.querySelector(".confirm-photo").classList.remove('d-none')
       document.querySelector('.form').classList.remove('d-none')
       var theImageTag = document.getElementById("imageTag");
       theImageTag.src = URL.createObjectURL(blob);
-      source = URL.createObjectURL(blob);
+     url = URL.createObjectURL(blob)
+       getBase64FromUrl(blob).then(base => {
+         source = base
+         } )
+   
       theStream.getTracks().forEach((track) => {
         track.stop()
       })
@@ -95,14 +101,29 @@ document.querySelector('.take-photo').addEventListener('click', () => {
     .catch(err => alert('Error: ' + err));
 });
 
+const getBase64FromUrl = async (blob) => {
+  
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(blob); 
+    reader.onloadend = () => {
+      const base64data = reader.result;   
+      resolve(base64data);
+    }
+  });
+}
+
+
+
+
 
 document.getElementById("img-input").addEventListener("change", readImage, false);
 
 function readImage() {
     if (this.files && this.files[0]) {
         var file = new FileReader();
+       
         file.onload = function(e) {
-                
           theStream.getTracks().forEach((track) => {
             track.stop()
           })
@@ -124,10 +145,10 @@ document.querySelector('#btn-register').addEventListener("click", (event) => {
   let name = document.querySelector('.input-name').value
   let age = document.querySelector('.input-age').value
   let dogbreed  = document.querySelector('.input-dogbreed').value
-
+ 
 
   if (name != "" && age != "" & dogbreed != "" && source != ""){
-    fetch("https://api-mobile-pets.herokuapp.com/pets",
+    fetch("https://mobile-pet-api.herokuapp.com/pets",
     {
         headers:{
             "Accept": "application/json",
@@ -157,21 +178,6 @@ document.querySelector('#btn-register').addEventListener("click", (event) => {
   }
 
  
-
-
-  async function fetchQuestionsJSON() {
-    const response = await fetch('http://localhost:8080/pets');
-    const questions = await response.json();
-    return questions;
-  }
-  fetchQuestionsJSON().then(questions => {
-    questions; // fetched questions
-    dados = questions
-    // console.log(dados[1]['url'])
-    // document.querySelector('.alvimar').src = dados[1]['url'];
-});
-  
-
 
   
   
