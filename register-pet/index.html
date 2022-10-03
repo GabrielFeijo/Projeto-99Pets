@@ -10,6 +10,7 @@
 </head>
 <body>
     <main class="wrap">
+    
         <section class="back d-none">
             <i class="bi bi-arrow-left"></i>
         </section>
@@ -23,16 +24,16 @@
 
         <section class="confirm-photo d-none">
             <img class="dog-photo" id="imageTag"></img>
-            <p >Tirar outra foto</p>
+            <p class="change-photo">Tirar outra foto</p>
         </section>
      
         <section class="form">
-            <form action="">
-                <input type="text" name="name" placeholder="Nome do pet" class="input">
-                <input type="number" name="age" placeholder="Idade do pet" class="input">
-                <input type="text" name="dogbreed" placeholder="Raça do pet" class="input">
+            <form  class="desc-dog">
+                <input type="text" name="name" placeholder="Nome do pet" class="input input-name">
+                <input type="text" name="age" placeholder="Idade do pet" class="input input-age">
+                <input type="text" name="dogbreed" placeholder="Raça do pet" class="input input-dogbreed">
         
-                <input type="submit" value="Próximo" class="btn-main bottom">
+                <input type="submit" value="Próximo" class="btn-main bottom" id="btn-register">
 
             </form>
         </section>
