@@ -24,6 +24,7 @@ fetchQuestionsJSON().then(questions => {
     img.id = dados[i]['id']
     img.src = dados[i]['url']
     img.classList.add('img-pet')
+    img.classList.add('select-pet')
 
     let id = dados[i]['id']
     img.onclick = function() { selectImage(id) };
