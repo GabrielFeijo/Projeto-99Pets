@@ -219,6 +219,7 @@
 }
 .desc{
     margin: 20px 0;
+   
 }
 
 .desc-add{
@@ -234,6 +235,11 @@
    height: 200px;
    border-radius: 16px;
     vertical-align: middle;
+    cursor: pointer;
+}
+.img-pet:hover{
+    border: 3px solid #ffc107;
+   
 }
 .dc-pet{
     display: inline-block;
@@ -268,6 +274,13 @@
     position: absolute;
     top: 50%;
    transform: translate(0,-50%);
+}
+.new-pet{
+    width: 185px;
+}
+.new-pet:hover{
+    cursor: pointer;
+    
 }
 .new-pet > p{
     display: inline;

@@ -10,16 +10,23 @@ async function fetchQuestionsJSON() {
 fetchQuestionsJSON().then(questions => {
   questions; // fetched questions
   dados = questions
-  // console.log(dados[1]['url'])
-  // document.querySelector('.alvimar').src = dados[1]['url'];
+
+
+  if (dados.length > 0){
+    document.querySelector('.pets').innerHTML = ""
+  }
 
   for (i = 1; i < dados.length; i++) {
     let div = document.createElement('div')
     div.classList.add('desc')
     let img = document.createElement('img')
 
+    img.id = dados[i]['id']
     img.src = dados[i]['url']
     img.classList.add('img-pet')
+
+    let id = dados[i]['id']
+    img.onclick = function() { selectImage(id) };
     div.appendChild(img)
 
 
@@ -48,13 +55,22 @@ fetchQuestionsJSON().then(questions => {
 
 
     document.querySelector('.pets').appendChild(div)
+   
   }
 
 
 });
   
+document.querySelector('.new-pet').addEventListener('click', () =>{
+  window.location.href = '../register-pet/index.html' , target='_self'
+})
 
 
+function selectImage(id) {
+
+ alert(id)
+ window.location.href = '../service-pet/index.html?id='+id , target='_self'
+}
 
 
 

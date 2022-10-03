@@ -12,13 +12,19 @@
         <img src="../images/login.svg" alt="" class="">
         <h2 class="title">Login</h2>
         <section class="form">
-            <form action="">
-                <input type="text" name="email" placeholder="E-mail" class="input">
-                <input type="password" name="password" placeholder="Senha" class="input">
-                <input type="submit" value="Entrar" class="btn-main bottom">
+            <form action="" class="form-login">
+                <input type="text" name="email" placeholder="E-mail" class="input" required>
+                <input type="password" name="password" placeholder="Senha" class="input" required>
+                <input type="submit" value="Entrar" class="btn-main bottom submit">
             </form>
         </section>
-      
+        <script>
+            document.querySelector('.form-login').addEventListener('submit',(event) =>{
+                event.preventDefault()
+                window.location.href = '../list-pets/index.html' , target='_self'
+              
+            })
+        </script>
     </main>
 </body>
 </html>
