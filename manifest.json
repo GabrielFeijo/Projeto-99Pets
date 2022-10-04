@@ -1,0 +1,83 @@
+{
+  "name": "99 Pets",
+  "short_name": "99 Pets",
+  "icons": [
+    {
+      "src": "images/logos/128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/167.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/196.png",
+      "sizes": "196x196",
+      "type": "image/png",
+	  "purpose": "any maskable"
+    },
+    {
+      "src": "images/logos/256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logos/1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#5e4d92",
+  "theme_color": "#d47586",
+  "orientation": "portrait",
+  "language": "portuguese",
+  "screenshots": [
+    {
+      "src": "/images/screenshot-1.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/screenshot-2.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ]
+
+
+
+ 
+
+ 
+  
+ 
+ 
+  
+ 
+ 
+}
