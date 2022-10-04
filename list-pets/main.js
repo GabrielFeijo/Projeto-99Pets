@@ -16,7 +16,7 @@ fetchQuestionsJSON().then(questions => {
     document.querySelector('.pets').innerHTML = ""
   }
 
-  for (i = 1; i < dados.length; i++) {
+  for (i = 0; i < dados.length; i++) {
     let div = document.createElement('div')
     div.classList.add('desc')
     let img = document.createElement('img')

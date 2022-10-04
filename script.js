@@ -83,7 +83,7 @@ document.querySelector('.take-photo').addEventListener('click', () => {
 //  var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
 
   theImageCapturer.takePhoto(
-     {imageHeight:200,imageWidth:164}).then(blob => {
+     {imageHeight:20,imageWidth:16}).then(blob => {
       document.querySelector('.show-video').classList.add('d-none')
       document.querySelector(".confirm-photo").classList.remove('d-none')
       document.querySelector('.form').classList.remove('d-none')
