@@ -31,7 +31,7 @@
                 </span>
             </div>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63205.79566815313!2d-34.94383518073671!3d-8.06448524116615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1997eb26b1bb%3A0x38559aaa17ddef7c!2sFaculdade%20Senac%20Pernambuco!5e0!3m2!1spt-BR!2sbr!4v1664678761118!5m2!1spt-BR!2sbr" width="297" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>       
+        <iframe src="https://www.bing.com/maps/directions?cp=-8.115246865981987~-34.89826792893746&sty=h&lvl=17.346830156691393&rtp=~pos.-8.115246865981987_-34.89826792893746____&FORM=MBEDLD" width="297" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>       
     
 
               
@@ -39,6 +39,23 @@
         <p class="desc-add">Seu motorista está chegando...</p>
       
     </main>
+
+    <script>
+           function getParameter(theParameter) {
+            var params = window.location.search.substr(1).split('&');
+
+            for (var i = 0; i < params.length; i++) {
+                var p = params[i].split('=');
+                if (p[0] == theParameter) {
+                    return decodeURIComponent(p[1]);
+                }
+            }
+            return false;
+            }
+            var lat = getParameter('lat')
+            var long = getParameter('long')
+        document.querySelector('.map').src = 'https://www.bing.com/maps/embed/?h=350&w=297&cp='+lat+'~'+long+'&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8'
+    </script>
   
 </body>
 </html>

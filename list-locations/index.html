@@ -18,8 +18,8 @@
 
         <section class="locations">
             
-            <div class="desc">
-                <img src="../images/local1.svg" alt="" class="img-pet">
+            <div class="desc " onclick="redirect(1)">
+                <img src="../images/local1.svg" alt="" class="img-pet ">
                 <div class="dc-pet">
                     <span class="info-center">
                         <h3 class="name">Pet Shop 1</h3>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             
-            <div class="desc">
+            <div class="desc" onclick="redirect(2)">
                 <img src="../images/local2.svg" alt="" class="img-pet">
                 <div class="dc-pet">
                     <span class="info-center">
@@ -51,7 +51,7 @@
                     </span>
                 </div>
             </div>
-            <div class="desc">
+            <div class="desc" onclick="redirect(3)">
                 <img src="../images/local3.svg" alt="" class="img-pet">
                 <div class="dc-pet">
                     <span class="info-center">
@@ -77,5 +77,24 @@
       
     </main>
   
+    <script>
+         function getParameter(theParameter) {
+            var params = window.location.search.substr(1).split('&');
+
+            for (var i = 0; i < params.length; i++) {
+                var p = params[i].split('=');
+                if (p[0] == theParameter) {
+                    return decodeURIComponent(p[1]);
+                }
+            }
+            return false;
+            }
+        
+        function redirect(id){
+            var valorHidSelProduto = getParameter('service')
+            window.location.href = '../info-location/index.html?pet='+id+'&service='+valorHidSelProduto, target='_self'
+        }
+ 
+    </script>
 </body>
 </html>

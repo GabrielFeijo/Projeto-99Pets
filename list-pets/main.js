@@ -68,8 +68,6 @@ document.querySelector('.new-pet').addEventListener('click', () =>{
 
 
 function selectImage(id) {
-
- alert(id)
  window.location.href = '../service-pet/index.html?id='+id , target='_self'
 }
 

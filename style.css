@@ -228,7 +228,10 @@
     font-size: 14px;
     color: rgba(0, 0, 0, 0.57);
     margin: 5px;
-    
+}
+.list:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 .img-pet{
    width: 164px;
@@ -336,7 +339,7 @@
 .confirm-box{
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
      
  

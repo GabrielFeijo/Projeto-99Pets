@@ -15,8 +15,8 @@
         </section>
       
   
-            
-            <div class="desc">
+        <section class="pets">
+            <!-- <div class="desc">
                 <img src="../images/small-dog.svg" alt="" class="img-pet">
                 <div class="dc-pet">
                     <span class="info-center">
@@ -25,12 +25,13 @@
                         <p class="info-pet">12 meses</p>
                     </span>
                 </div>
-            </div>
-        <p class="desc-add">Não é esse pet?</p>
+            </div> -->
+        </section>
+        <p class="desc-add list">Não é esse pet?</p>
 
         <select name="services" class="select">
             <option value="none" selected disabled>Qual serviço?</option>
-            <option value="banhoetosa">Banho & Tosa</option>
+            <option value="Banho & Tosa">Banho & Tosa</option>
             <option value="Consultas veterinárias">Consultas veterinárias</option>
             <option value="Vacinas">Vacinas</option>
             <option value="Hospedagem">Hospedagem</option>
@@ -43,7 +44,7 @@
 
       
     
-        <button class="btn-main bottom">Próximo</button>
+        <button class="btn-main bottom choose-pet">Próximo</button>
 
        
       
@@ -61,7 +62,77 @@
             return false;
             }
             var valorHidSelProduto = getParameter('id')
-            alert(valorHidSelProduto);
+            let url = "https://mobile-pet-api.herokuapp.com/pets/"+valorHidSelProduto
+         
+            fetch(url)
+            .then((response) => {
+            return response.json();
+            })
+            .then((data) => {
+                dados = data;
+                console.log(dados)
+                console.log(dados['id'])
+
+              
+                document.querySelector('.pets').innerHTML = ""
+         
+          
+
+          
+                let div = document.createElement('div')
+                div.classList.add('desc')
+                let img = document.createElement('img')
+
+                img.id = dados['id']
+                img.src = dados['url']
+                img.classList.add('img-pet')
+                
+
+                let id = dados['id']
+              
+                div.appendChild(img)
+
+
+                let div2 = document.createElement('div')
+                div2.classList.add('dc-pet')
+                let span = document.createElement('span')
+                span.classList.add('info-center')
+                let name = document.createElement('h3')
+                name.classList.add('name')
+                name.textContent = dados['name']
+
+                let raca = document.createElement('p')
+                let idade = document.createElement('p')
+                raca.classList.add('info-pet')
+                idade.classList.add('info-pet')
+
+                raca.textContent = dados['dogbreed']
+                idade.textContent = dados['age']
+
+
+                span.appendChild(name)
+                span.appendChild(raca)
+                span.appendChild(idade)
+                div2.appendChild(span)
+                div.appendChild(div2)
+
+
+                document.querySelector('.pets').appendChild(div)
+            
+          
+            
+            })
+           
+
+            document.querySelector('.choose-pet').addEventListener('click', () =>{
+                let services = document.querySelector('.select').value
+               window.location.href = '../list-locations/index.html?service='+services  , target='_self'
+            })
+            
+
+            document.querySelector('.list').addEventListener('click', () =>{
+               window.location.href = '../list-pets/index.html' , target='_self'
+            })
     </script>
 </body>
 </html>

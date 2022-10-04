@@ -164,10 +164,11 @@ document.querySelector('#btn-register').addEventListener("click", (event) => {
       
         })
     })
+    document.querySelector('.desc-dog').reset();
+    window.open("../list-pets/index.html", target="_self" )      
     .then(res => {
         if (res.ok) {
-          document.querySelector('.desc-dog').reset();
-           window.open("../list-pets/index.html", target="_self" )       
+ 
             return res.json();    
         }else{
             console.log(res)
