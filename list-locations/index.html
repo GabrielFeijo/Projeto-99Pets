@@ -11,7 +11,7 @@
 <body>
     <main class="box">
         <section class="back">
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-left back-page"></i>
         </section>
         <h2 class="font2 w-title">Qual petshop?</h2>
         <p class="desc-add">Os petshops dessa lista são os mais indicados para o serviço escolhido.</p>
@@ -94,7 +94,9 @@
             var valorHidSelProduto = getParameter('service')
             window.location.href = '../info-location/index.html?pet='+id+'&service='+valorHidSelProduto, target='_self'
         }
- 
+        document.querySelector('.back-page').addEventListener('click', () =>{
+               window.location.href = '../list-pets/index.html' , target='_self'
+            })
     </script>
 </body>
 </html>

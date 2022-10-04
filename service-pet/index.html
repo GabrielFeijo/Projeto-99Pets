@@ -11,7 +11,7 @@
 <body>
     <main class="box">
         <section class="back">
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-left back-page"></i>
         </section>
       
   
@@ -31,7 +31,7 @@
 
         <select name="services" class="select">
             <option value="none" selected disabled>Qual serviço?</option>
-            <option value="Banho & Tosa">Banho & Tosa</option>
+            <option value="Banho e Tosa">Banho & Tosa</option>
             <option value="Consultas veterinárias">Consultas veterinárias</option>
             <option value="Vacinas">Vacinas</option>
             <option value="Hospedagem">Hospedagem</option>
@@ -126,11 +126,19 @@
 
             document.querySelector('.choose-pet').addEventListener('click', () =>{
                 let services = document.querySelector('.select').value
-               window.location.href = '../list-locations/index.html?service='+services  , target='_self'
+                if (services != 'none'){
+                    window.location.href = '../list-locations/index.html?service='+services  , target='_self'
+                }else{
+                    alert('Escolha um serviço')
+                }
+               
             })
             
 
             document.querySelector('.list').addEventListener('click', () =>{
+               window.location.href = '../list-pets/index.html' , target='_self'
+            })
+            document.querySelector('.back-page').addEventListener('click', () =>{
                window.location.href = '../list-pets/index.html' , target='_self'
             })
     </script>

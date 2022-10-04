@@ -112,19 +112,25 @@ const getBase64FromUrl = async (blob) => {
     }
   });
 }
-
-
-
-
+function bytesToMegaBytes(bytes) { 
+  return bytes / (1024*1024); 
+}
 
 document.getElementById("img-input").addEventListener("change", readImage, false);
 
 function readImage() {
     if (this.files && this.files[0]) {
+   
+      let size = bytesToMegaBytes(this.files[0].size)
+ 
+      if (size < 2){
         var file = new FileReader();
-
+    
         
         file.onload = function(e) {
+         
+        
+         
           theStream.getTracks().forEach((track) => {
             track.stop()
           })
@@ -135,6 +141,10 @@ function readImage() {
             source = e.target.result;
         };       
         file.readAsDataURL(this.files[0]);
+      }else{
+        alert('Sua imagem é muito grande!')
+      }
+   
     }
 }
 let dados = ""

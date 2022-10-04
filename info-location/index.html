@@ -11,7 +11,7 @@
 <body>
     <main class="box">
         <section class="back">
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-left back-page"></i>
         </section>
  
         <div class="desc location">
@@ -40,7 +40,7 @@
     <section class="confirm-box d-none">
         <div class="div-box">
             <h2>Enviar localização?</h2>
-            <p>Precisamos da sua localização para que possamos seu pet</p>
+            <p>Precisamos da sua localização para que possamos localizar seu pet</p>
             <button class="btn-secondary">Enviar Localização</button>
         </div>
     
@@ -121,7 +121,9 @@
                 }
             }
             })
-
+            document.querySelector('.back-page').addEventListener('click', () =>{
+               window.location.href = '../list-pets/index.html' , target='_self'
+            })
     </script>
 </body>
 </html>

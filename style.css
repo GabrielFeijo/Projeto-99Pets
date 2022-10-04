@@ -424,3 +424,9 @@
     cursor: inherit;
     display: block;
 }
+.back > i{
+    cursor: pointer;
+}
+.back > i:hover{
+    color: #ffc107;
+}

@@ -14,15 +14,25 @@
             <span class="line"></span>
             <p class="txt-login">Já tenho uma conta</p>
             <span class="line"></span>
-            <button class="btn-main">Entrar</button>
+            <button class="btn-main login">Entrar</button>
         </section>
         <section class="container">
             <span class="line"></span>
             <p class="txt-login">Ainda não tenho conta</p>
             <span class="line"></span>
-            <button class="btn-main">Cadastrar</button>
+            <button class="btn-main register">Cadastrar</button>
         </section>
     </main>
-    
+
+    <script>
+          document.querySelector('.login').addEventListener('click', () =>{
+                
+               window.location.href = '../login/index.html'  ,target='_self'
+            })
+          document.querySelector('.register').addEventListener('click', () =>{
+              
+               window.location.href = '../register/index.html' , target='_self'
+            })
+    </script>    
 </body>
 </html>

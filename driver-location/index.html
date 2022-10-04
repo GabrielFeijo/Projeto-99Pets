@@ -11,7 +11,7 @@
 <body>
     <main class="box">
         <section class="back">
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-left back-page"></i>
         </section>
         <h2 class="font2 w-title">Acompanhe a viagem do seu pet</h2>
 
@@ -55,6 +55,10 @@
             var lat = getParameter('lat')
             var long = getParameter('long')
         document.querySelector('.map').src = 'https://www.bing.com/maps/embed/?h=350&w=297&cp='+lat+'~'+long+'&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8'
+
+        document.querySelector('.back-page').addEventListener('click', () =>{
+               window.location.href = '../list-pets/index.html' , target='_self'
+            })
     </script>
   
 </body>
