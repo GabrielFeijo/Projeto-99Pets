@@ -98,7 +98,7 @@ document.querySelector('.take-photo').addEventListener('click', () => {
         track.stop()
       })
     })
-    .catch(err => alert('Error: ' + err));
+    .catch(err => console.log('Error: ' + err));
 });
 
 const getBase64FromUrl = async (blob) => {
