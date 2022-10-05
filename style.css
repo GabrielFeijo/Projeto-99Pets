@@ -28,7 +28,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
  
-  
+    height: 100vh;
 }
 .box{
     position: absolute;
@@ -36,6 +36,7 @@
     transform: translate(-50%,0);
     padding: 40px 0;   
    width: 292px;
+   height: 100vh;
 }
 .logo{
     height: 30vh;
@@ -150,8 +151,8 @@
     margin-top: 10px;
 }
 .bottom{
-    position: relative;
-    bottom: -5vh;
+    position: absolute;
+    bottom: 0px;
 }
 
 .add-photo{
@@ -320,7 +321,7 @@
 
 .mb{
     margin-top: 10px;
-    margin-bottom: 16vh; 
+    
 }
 .price > i{
     color:#FFBD59;
