@@ -2,14 +2,16 @@
 
 fetchQuestionsJSON()
 
-async function fetchQuestionsJSON() {
-  const response = await fetch('https://mobile-pet-api.herokuapp.com/pets');
-  const questions = await response.json();
-  return questions;
-}
-fetchQuestionsJSON().then(questions => {
-  questions; // fetched questions
-  dados = questions
+function fetchQuestionsJSON() {
+  let url = "https://mobile-pet-api.herokuapp.com/pets/"
+         
+            fetch(url)
+            .then((response) => {
+            return response.json();
+            })
+ .then((data) => {
+                dados = data;
+
 
 
   if (dados.length > 0){
@@ -58,9 +60,10 @@ fetchQuestionsJSON().then(questions => {
     document.querySelector('.pets').appendChild(div)
    
   }
+    })
 
 
-});
+}
   
 document.querySelector('.new-pet').addEventListener('click', () =>{
   window.location.href = '../register-pet/index.html' , target='_self'
