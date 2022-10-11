@@ -25,7 +25,8 @@ self.addEventListener('install', event => {
          './login/index.html',
          './register/index.html',
          './register-pet/index.html',
-         './service-pet/index.html',               
+         './service-pet/index.html',    
+         './contact/index.html',
 
         'images/mini.svg',
         'images/dog.svg',
@@ -43,6 +44,13 @@ self.addEventListener('install', event => {
         'images/logo.png',
         'images/logo2.png',       
             
+        'images/squad/aynoa.JPG',
+         'images/squad/gg.JPG',
+         'images/squad/torres.JPG',
+         'images/squad/giu.png',
+         'images/squad/rita.png',
+         'images/squad/wendel.jpeg',
+        
         
         
         
