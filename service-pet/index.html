@@ -27,13 +27,32 @@
 </head>
 <body>
     <main class="box">
-        <section class="back">
-            <i class="bi bi-arrow-left back-page"></i>
-        </section>
+          <section class="back">
+            <div class="menu">
+              <input type="checkbox" name="" id="navigator">
+              <nav class="nav-menu">
+              
+                <div class="navicon">
+                  <div></div>
+                </div>
+              
+               <a href="#"><i class="bi bi-person"></i> Meu Perfil</a>
+              <a  href="../list-pets/index.html"><i class="bi bi-postcard-heart"></i> Meus animais</a>
+              <a href="#"><i class="bi bi-bag-plus"></i> Serviços</a>
+              <a href="../list-locations/index.html"><i class="bi bi-shop"></i> Pet Shops</a>
+              <a href="../contact/index.html"><i class="bi bi-people"></i> Equipe</a>
+             
+               
+              
+              </nav>
+            </div>
+            <img src="../images/mini.svg" alt="Mini logo 99 Pets" class="mini-logo">
+            <i class="bi bi-arrow-left  back-page"></i>
+          </section> 
       
   
         <section class="pets">
-            <!-- <div class="desc">
+             <div class="desc">
                 <img src="../images/small-dog.svg" alt="" class="img-pet">
                 <div class="dc-pet">
                     <span class="info-center">
@@ -42,7 +61,7 @@
                         <p class="info-pet">12 meses</p>
                     </span>
                 </div>
-            </div> -->
+            </div> 
         </section>
         <p class="desc-add list">Não é esse pet?</p>
 
@@ -79,62 +98,65 @@
             return false;
             }
             var valorHidSelProduto = getParameter('id')
-            let url = "https://mobile-pet-api.herokuapp.com/pets/"+valorHidSelProduto
-         
-            fetch(url)
-            .then((response) => {
-            return response.json();
-            })
-            .then((data) => {
-                dados = data;
-                console.log(dados)
-                console.log(dados['id'])
 
-              
-                document.querySelector('.pets').innerHTML = ""
-         
-          
-
-          
-                let div = document.createElement('div')
-                div.classList.add('desc')
-                let img = document.createElement('img')
-
-                img.id = dados['id']
-                img.src = dados['url']
-                img.classList.add('img-pet')
+            if (valorHidSelProduto) {
+              let url = "https://mobile-pet-api.herokuapp.com/pets/"+valorHidSelProduto
+           
+              fetch(url)
+              .then((response) => {
+              return response.json();
+              })
+              .then((data) => {
+                  dados = data;
+                  console.log(dados)
+                  console.log(dados['id'])
+  
                 
-
-                let id = dados['id']
-              
-                div.appendChild(img)
-
-
-                let div2 = document.createElement('div')
-                div2.classList.add('dc-pet')
-                let span = document.createElement('span')
-                span.classList.add('info-center')
-                let name = document.createElement('h3')
-                name.classList.add('name')
-                name.textContent = dados['name']
-
-                let raca = document.createElement('p')
-                let idade = document.createElement('p')
-                raca.classList.add('info-pet')
-                idade.classList.add('info-pet')
-
-                raca.textContent = dados['dogbreed']
-                idade.textContent = dados['age']
-
-
-                span.appendChild(name)
-                span.appendChild(raca)
-                span.appendChild(idade)
-                div2.appendChild(span)
-                div.appendChild(div2)
-
-
-                document.querySelector('.pets').appendChild(div)
+                  document.querySelector('.pets').innerHTML = ""
+           
+            
+  
+            
+                  let div = document.createElement('div')
+                  div.classList.add('desc')
+                  let img = document.createElement('img')
+  
+                  img.id = dados['id']
+                  img.src = dados['url']
+                  img.classList.add('img-pet')
+                  
+  
+                  let id = dados['id']
+                
+                  div.appendChild(img)
+  
+  
+                  let div2 = document.createElement('div')
+                  div2.classList.add('dc-pet')
+                  let span = document.createElement('span')
+                  span.classList.add('info-center')
+                  let name = document.createElement('h3')
+                  name.classList.add('name')
+                  name.textContent = dados['name']
+  
+                  let raca = document.createElement('p')
+                  let idade = document.createElement('p')
+                  raca.classList.add('info-pet')
+                  idade.classList.add('info-pet')
+  
+                  raca.textContent = dados['dogbreed']
+                  idade.textContent = dados['age']
+  
+  
+                  span.appendChild(name)
+                  span.appendChild(raca)
+                  span.appendChild(idade)
+                  div2.appendChild(span)
+                  div.appendChild(div2)
+  
+  
+                  document.querySelector('.pets').appendChild(div)
+              }
             
           
             

@@ -25,20 +25,9 @@ self.addEventListener('install', event => {
          './login/index.html',
          './register/index.html',
          './register-pet/index.html',
-         './service-pet/index.html',
-        
-        
-        
-        
-        
-        
-        
-        
+         './service-pet/index.html',               
 
-
-        
-
-    
+        'images/mini.svg',
         'images/dog.svg',
         'images/driver.svg',
         'images/local1.svg',

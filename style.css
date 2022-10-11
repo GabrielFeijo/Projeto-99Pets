@@ -23,12 +23,14 @@
 }
 
 .wrap{
-    position: absolute;
-    top: 50%;
+  height: 500px;
+    position: absolute ;
+    top: 50% !important;
     left: 50%;
     transform: translate(-50%,-50%);
+
  
-    height: 100vh;
+   
 }
 .box{
     position: absolute;
@@ -39,10 +41,12 @@
    height: 100vh;
 }
 .logo{
+    
     height: 30vh;
     border-radius:50% ;
     display: block;
     margin: auto;
+
  
 }
 .back{
@@ -112,7 +116,21 @@
     border:3px solid #FFBD59;
     
 }
+.nav-menu a {
+  font-family: 'OpenSans-Bold',Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  vertical-align: middle;
 
+}
+.nav-menu > a > i{
+    font-size: 24px;
+  margin-right: 2px;
+   
+}
+a,a:visited{
+  text-decoration: none;
+  color:black;
+}
 
 
 .title{
@@ -126,6 +144,9 @@
     font-family: 'Montserrat-Regular',Arial, Helvetica, sans-serif;
     margin-top: 20px;
     color: black;
+}
+.form input{
+      width: 297px;
 }
 
 .input{
@@ -158,10 +179,7 @@
     color: white;
     margin-top: 10px;
 }
-.bottom{
-    position: absolute;
-    bottom: 0px;
-}
+
 
 .add-photo{
     position: relative;
@@ -177,6 +195,13 @@
 .icon{
     font-size: 24px;
  
+}
+@media (min-height: 660px)
+{
+.bottom{
+  position: fixed;
+  bottom: 50px;
+}
 }
 
 
@@ -289,6 +314,7 @@
 }
 .new-pet{
     width: 185px;
+  padding-bottom:20px;
 }
 .new-pet:hover{
     cursor: pointer;
@@ -438,6 +464,9 @@
 }
 .back > i:hover{
     color: #ffc107;
+}
+.squad{
+  padding-bottom: 10px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
