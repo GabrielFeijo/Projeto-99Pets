@@ -46,9 +46,10 @@
      
         <section class="form">
             <form  class="desc-dog">
-                <input type="text" name="name" placeholder="Nome do pet" class="input input-name">
-                <input type="text" name="age" placeholder="Idade do pet" class="input input-age">
-                <input type="text" name="dogbreed" placeholder="Raça do pet" class="input input-dogbreed">
+                <input type="text" name="name" placeholder="Nome do pet" class="input input-name" maxlength="42">
+                <input type="text" name="age" placeholder="Idade do pet" class="input input-age" maxlength="20">
+                <input type="text" name="dogbreed" placeholder="Raça do pet" class="input input-dogbreed"
+                  maxlength="30">
         
                 <input type="submit" value="Próximo" class="btn-main bottom" id="btn-register">
 
@@ -58,7 +59,7 @@
       
         <div class="show-video d-none">
             
-            <p><video autoplay style="height: 380px; width: 298px;"></video></p>
+            <p><video autoplay style="height: 480px; width: 298px;"></video></p>
             <section class="info-photo">
                 <span class="gallery">
                     <input id="img-input" type="file" name="imagem" accept=".png,.jpg,.jpeg">

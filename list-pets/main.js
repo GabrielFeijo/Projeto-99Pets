@@ -77,4 +77,6 @@ function selectImage(id) {
 
 
 
-
+  document.querySelector('.back-page').addEventListener('click', () =>{
+               window.location.href = '../login/index.html' , target='_self'
+        })

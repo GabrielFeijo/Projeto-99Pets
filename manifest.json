@@ -36,7 +36,7 @@
     {
       "src": "images/logos/256.png",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png"       
     },
     {
       "src": "images/logos/512.png",
@@ -403,7 +403,7 @@
     },
     {
       "src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
-      "sizes": "256x256"
+      "sizes": "256x256"  
     },
     {
       "src": "android/android-launchericon-512-512.png",
